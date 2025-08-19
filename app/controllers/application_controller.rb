@@ -6,7 +6,11 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :profile, :occupation, :position])
   end
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 end
+=======
+end
+>>>>>>> Stashed changes
 =======
 end
 >>>>>>> Stashed changes
