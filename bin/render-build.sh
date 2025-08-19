@@ -5,11 +5,17 @@ set -o errexit
 # Enable verbose output
 set -x
 
+# Set environment variables for asset compilation
+export RAILS_ENV=production
+export NODE_ENV=production
+
 # Debug information
 echo "=== Build Environment Info ==="
 echo "Ruby version: $(ruby --version)"
 echo "Bundler version: $(bundle --version)"
 echo "Current directory: $(pwd)"
+echo "RAILS_ENV: $RAILS_ENV"
+echo "NODE_ENV: $NODE_ENV"
 echo "Gemfile contents:"
 cat Gemfile
 echo "=== End Gemfile ==="
@@ -46,10 +52,17 @@ echo "=== Puma executable path ==="
 which puma
 bundle exec which puma
 
-# Precompile assets
+# Check if assets directory exists
+echo "=== Checking assets directory ==="
+ls -la app/assets/
+ls -la app/javascript/
+
+# Precompile assets with detailed error handling
 echo "=== Precompiling assets ==="
-if ! bundle exec rake assets:precompile; then
+if ! bundle exec rake assets:precompile RAILS_ENV=production; then
     echo "ERROR: assets precompilation failed"
+    echo "=== Assets precompilation error details ==="
+    bundle exec rake assets:precompile RAILS_ENV=production --trace 2>&1
     exit 1
 fi
 
