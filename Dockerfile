@@ -34,7 +34,7 @@ COPY . .
 RUN bundle exec bootsnap precompile app/ lib/
 
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
-RUN SECRET_KEY_BASE_DUMMY=1 bundle exec rake assets:precompile RAILS_ENV=production || echo "Asset precompilation failed, continuing..."
+# RUN SECRET_KEY_BASE_DUMMY=1 bundle exec rake assets:precompile RAILS_ENV=production || echo "Asset precompilation failed, continuing..."
 
 
 # Final stage for app image
