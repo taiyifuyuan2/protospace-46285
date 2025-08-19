@@ -12,7 +12,7 @@ gem "sprockets-rails"
 gem "mysql2", "~> 0.5"
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", ">= 5.0"
+gem "puma", "~> 6.0"
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
@@ -68,3 +68,10 @@ group :test do
 end
 
 gem 'devise'
+
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
+
+group :production do
+  gem 'pg'
+end
