@@ -192,6 +192,7 @@ a {
   font-size: 16px;
   color: #999;
   text-decoration: underline;
+  text-align: center;
 }
 .prototype__image{
   width: 40%;
