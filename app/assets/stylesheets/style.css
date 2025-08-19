@@ -126,6 +126,24 @@ a {
 .greeting__link{
   text-decoration: underline;
 }
+.prototype__wrapper{
+  margin-bottom: 20px;
+}
+.prototype__btn{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #87CEFA;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #87CEFA solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+}
+.prototype__btn:hover{
+  color: #fff;
+  background: #87CEFA;
+}
 .page-heading {
   font-size: 30px;
   margin-bottom: 28px;
@@ -136,6 +154,8 @@ a {
   justify-content: space-between;
   align-items: center;
   min-height: calc(100vh - 161px);
+  padding-top: 20px;
+  margin-top: 0;
 }
 .card {
   width: calc((100% - 50px) / 3);
@@ -162,9 +182,6 @@ a {
 }
 
 /* 詳細ページ */
-.prototype__wrapper{
-  min-height: calc(100vh - 161px);
-}
 .prototype__hedding{
   font-size: 24px;
   font-weight: bold;
@@ -174,7 +191,6 @@ a {
   display: block;
   font-size: 16px;
   color: #999;
-  text-align: center;
   text-decoration: underline;
 }
 .prototype__image{

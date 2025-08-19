@@ -1,10 +1,16 @@
 <div class="card">
-  <%= link_to image_tag("プロトタイプの画像", class: :card__img ), root_path%>
+  <% if prototype.image.attached? %>
+    <%= link_to image_tag(prototype.image), prototype_path(prototype), class: :card__img %>
+  <% else %>
+    <div class="card__img" style="background-color: #f8f9fa; height: 200px; display: flex; align-items: center; justify-content: center; border: 2px dashed #dee2e6;">
+      <span style="color: #6c757d; font-size: 14px;">画像なし</span>
+    </div>
+  <% end %>
   <div class="card__body">
-    <%= link_to "プロトタイプのタイトル", root_path, class: :card__title%>
+    <%= link_to prototype.title, prototype_path(prototype), class: :card__title%>
     <p class="card__summary">
-      <%= "プロトタイプのキャッチコピー" %>
+      <%= prototype.catch_copy %>
     </p>
-    <%= link_to "by プロトタイプの投稿者名", root_path, class: :card__user %>
+    <%= link_to "by #{prototype.user.name}", root_path, class: :card__user %>
   </div>
 </div>
